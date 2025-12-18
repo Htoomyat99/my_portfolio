@@ -15,3 +15,8 @@ export interface MeteorsType {
   delay: number;
   animationDuration: number;
 }
+
+export interface NavItemType {
+  name: string;
+  href: string;
+}

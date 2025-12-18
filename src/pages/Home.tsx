@@ -1,3 +1,4 @@
+import NavBar from "@/components/NavBar";
 import StarBackground from "@/components/StarBackground";
 import ThemeToggle from "@/components/ThemeToggle";
 import React from "react";
@@ -8,6 +9,8 @@ export default function Home() {
       <ThemeToggle />
 
       <StarBackground />
+
+      <NavBar />
     </div>
   );
 }
