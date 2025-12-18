@@ -1,7 +1,7 @@
+import HeroSection from "@/components/HeroSection";
 import NavBar from "@/components/NavBar";
 import StarBackground from "@/components/StarBackground";
 import ThemeToggle from "@/components/ThemeToggle";
-import React from "react";
 
 export default function Home() {
   return (
@@ -11,6 +11,10 @@ export default function Home() {
       <StarBackground />
 
       <NavBar />
+
+      <main>
+        <HeroSection />
+      </main>
     </div>
   );
 }

@@ -37,7 +37,7 @@ export default function NavBar() {
           className="text-xl font-bold text-primary flex items-center"
         >
           <span className="relative z-10">
-            <span className="text-glow text-foreground">Htoo Myat Lwin</span>{" "}
+            <span className="text-glow text-foreground">Htoo Myat</span>{" "}
             Portfolio
           </span>
         </a>
