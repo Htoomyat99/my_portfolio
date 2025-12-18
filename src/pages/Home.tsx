@@ -1,6 +1,7 @@
 import AboutSection from "@/components/AboutSection";
 import HeroSection from "@/components/HeroSection";
 import NavBar from "@/components/NavBar";
+import SkillSection from "@/components/SkillSection";
 import StarBackground from "@/components/StarBackground";
 import ThemeToggle from "@/components/ThemeToggle";
 
@@ -17,6 +18,8 @@ export default function Home() {
         <HeroSection />
 
         <AboutSection />
+
+        <SkillSection />
       </main>
     </div>
   );

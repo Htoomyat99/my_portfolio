@@ -29,3 +29,9 @@ export interface AboutItemsType {
   icon: React.ReactNode;
   description: string;
 }
+
+export interface SkillType {
+  name: string;
+  level: number;
+  category: string;
+}
