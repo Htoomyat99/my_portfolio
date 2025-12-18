@@ -1,3 +1,5 @@
+import type React from "react";
+
 export interface StarsType {
   id: number;
   size: number;
@@ -19,4 +21,11 @@ export interface MeteorsType {
 export interface NavItemType {
   name: string;
   href: string;
+}
+
+export interface AboutItemsType {
+  id: number;
+  title: string;
+  icon: React.ReactNode;
+  description: string;
 }
