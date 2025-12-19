@@ -45,3 +45,10 @@ export interface ProjectType {
   demoUrl: string;
   githubUrl: string;
 }
+
+export interface ContactInfoType {
+  id: number;
+  icon: React.ReactNode;
+  title: string;
+  detail: string;
+}
