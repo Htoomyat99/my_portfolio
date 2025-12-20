@@ -1,39 +1,42 @@
-/* eslint-disable react-hooks/set-state-in-effect */
+/* eslint-disable react-hooks/exhaustive-deps */
 import { cn } from "@/lib/utils";
 import { Moon, Sun } from "lucide-react";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 
-export default function ThemeToggle() {
-  const [isDarkMode, setIsDarkMode] = useState(false);
+interface ThemeToggleProps {
+  isDarkMode: boolean;
+  setIsDarkMode: (value: boolean) => void;
+}
 
+export default function ThemeToggle({
+  isDarkMode,
+  setIsDarkMode,
+}: ThemeToggleProps) {
   useEffect(() => {
-    const storedTheme = localStorage.getItem("theme");
-    if (storedTheme === "dark") {
-      setIsDarkMode(true);
-      document.documentElement.classList.add("dark");
-    } else {
-      document.documentElement.classList.remove("dark");
-      setIsDarkMode(false);
-    }
+    const stored = localStorage.getItem("theme");
+    const systemDark = window.matchMedia(
+      "(prefers-color-scheme: dark)"
+    ).matches;
+
+    const dark = stored === "dark" || (!stored && systemDark);
+
+    setIsDarkMode(dark);
+    document.documentElement.classList.toggle("dark", dark);
   }, []);
 
   const toggleTheme = () => {
-    if (isDarkMode) {
-      setIsDarkMode(false);
-      document.documentElement.classList.remove("dark");
-      localStorage.setItem("theme", "light");
-    } else {
-      setIsDarkMode(true);
-      document.documentElement.classList.add("dark");
-      localStorage.setItem("theme", "dark");
-    }
+    const nextMode = !isDarkMode;
+
+    setIsDarkMode(nextMode);
+    document.documentElement.classList.toggle("dark", nextMode);
+    localStorage.setItem("theme", nextMode ? "dark" : "light");
   };
 
   return (
     <button
       onClick={toggleTheme}
       className={cn(
-        "fixed max-sm:hidden top-5 right-5 z-50 p-2 rounded-full transition-colors duration-300",
+        "fixed max-sm:hidden top-3 right-5 z-50 p-2 rounded-full transition-colors duration-300",
         "focus:outline-hidden"
       )}
     >

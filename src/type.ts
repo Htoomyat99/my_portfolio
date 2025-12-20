@@ -1,5 +1,11 @@
 import type React from "react";
 
+export interface CloudProps {
+  top: string;
+  size: number;
+  duration: string;
+  opacity: string;
+}
 export interface StarsType {
   id: number;
   size: number;

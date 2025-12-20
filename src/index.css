@@ -18,6 +18,8 @@
   --animate-fade-in-delay-3: fade-in 0.7s ease-out 0.6s forwards;
   --animate-fade-in-delay-4: fade-in 0.7s ease-out 0.8s forwards;
   --animate-meteor: meteor 5s linear infinite;
+
+  --animate-cloud: cloud-move 32s linear infinite;
 }
 
 @keyframes float {
@@ -61,6 +63,14 @@
     opacity: 0;
   }
 }
+@keyframes cloud-move {
+  from {
+    transform: translateX(-30%);
+  }
+  to {
+    transform: translateX(130vw);
+  }
+}
 
 @layer base {
   :root {
@@ -69,7 +79,8 @@
 
     --card: 0 0% 100%;
 
-    --primary: 250 47% 60%;
+    /* --primary: 250 47% 60%; */
+    --primary: 205 95% 55%;
     --primary-foreground: 210 40% 98%;
 
     --border: 214 32% 91%;
@@ -154,9 +165,19 @@
   box-shadow: 0 0 10px 5px rgba(255, 255, 255, 0.3);
 }
 
+@utility animate-cloud {
+  animation: var(--animate-cloud);
+}
+
 #root {
   max-width: 100%;
   margin: 0 auto;
   padding: 0;
   text-align: center;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-cloud {
+    animation: none;
+  }
 }
