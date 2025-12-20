@@ -1,3 +1,4 @@
+import { message } from "@/lib/messages";
 import { cn } from "@/lib/utils";
 import type { NavItemType } from "@/type";
 import { Menu, X } from "lucide-react";
@@ -37,8 +38,10 @@ export default function NavBar() {
           className="text-xl font-bold text-primary flex items-center"
         >
           <span className="relative z-10">
-            <span className="text-glow text-foreground">Htoo Myat</span>{" "}
-            Portfolio
+            <span className="text-glow text-foreground">
+              {message.firstName}
+            </span>{" "}
+            {message.portfolio}
           </span>
         </a>
 

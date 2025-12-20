@@ -5,4 +5,5 @@ export const message = {
   lastName: "Lwin",
   viewMyWork: "View My Work",
   scroll: "Scroll",
+  portfolio: "Portfolio",
 };
