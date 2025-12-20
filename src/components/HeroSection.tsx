@@ -1,3 +1,4 @@
+import { message } from "@/lib/messages";
 import { ChevronDown } from "lucide-react";
 
 export default function HeroSection() {
@@ -12,27 +13,28 @@ export default function HeroSection() {
             <span className="opacity-0 animate-fade-in">Hi, I'm</span>
             <span className="text-primary opacity-0 animate-fade-in-delay-1">
               {" "}
-              Htoo Myat
+              {message.firstName}
             </span>
-            <span className="opacity-0 animate-fade-in-delay-2"> Lwin</span>
+            <span className="opacity-0 animate-fade-in-delay-2">
+              {" "}
+              {message.lastName}
+            </span>
           </h1>
 
           <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto opacity-0 animate-fade-in-delay-3">
-            I created this portfolio to showcase my skills and experience in web
-            development. I am a self-taught developer with a passion for
-            creating user-friendly and visually appealing websites.
+            {message.heroDescription}
           </p>
 
           <div className="pt-4 opacity-0 animate-fade-in-delay-4">
             <a href="projects" className="cosmic-button">
-              View My Work
+              {message.viewMyWork}
             </a>
           </div>
         </div>
       </div>
 
       <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center animate-bounce">
-        <span className="text-sm mb-2">Scroll</span>
+        <span className="text-sm mb-2">{message.scroll}</span>
 
         <ChevronDown className="h-5 w-5 text-primary" />
       </div>
