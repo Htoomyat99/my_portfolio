@@ -15,6 +15,7 @@ const navItems: NavItemType[] = [
 export default function NavBar() {
   const [isScroll, setIsScroll] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [activeHref, setActiveHref] = useState("#hero");
 
   useEffect(() => {
     const handleScroll = () => {
@@ -49,9 +50,13 @@ export default function NavBar() {
         <div className="hidden md:flex space-x-8">
           {navItems.map((nav, key) => (
             <a
+              onClick={() => setActiveHref(nav.href)}
               key={key}
               href={nav.href}
-              className="text-foreground/80 hover:text-primary transition-colors duration-300"
+              className="text-foreground/80 hover:scale-110 hover:text-primary transition-colors duration-300"
+              style={{
+                textDecoration: nav.href === activeHref ? "underline" : "none",
+              }}
             >
               {nav.name}
             </a>
