@@ -2,7 +2,7 @@ import { message } from "@/lib/messages";
 import { cn } from "@/lib/utils";
 import type { NavItemType } from "@/type";
 import { Menu, X } from "lucide-react";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const navItems: NavItemType[] = [
   { name: "Home", href: "#hero" },
@@ -16,14 +16,61 @@ export default function NavBar() {
   const [isScroll, setIsScroll] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeHref, setActiveHref] = useState("#hero");
+  const sectionsRef = useRef<HTMLElement[]>([]);
+
+  useEffect(() => {
+    sectionsRef.current = navItems
+      .map((item) => document.querySelector(item.href))
+      .filter(Boolean) as HTMLElement[];
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScroll(window.screenY > 10);
+
+      const scrollPosition = window.scrollY + 100;
+
+      for (let i = sectionsRef.current.length - 1; i >= 0; i--) {
+        const section = sectionsRef.current[i];
+        if (section) {
+          const sectionTop = section.offsetTop;
+          const sectionHeight = section.offsetHeight;
+
+          if (
+            scrollPosition >= sectionTop &&
+            scrollPosition < sectionTop + sectionHeight
+          ) {
+            setActiveHref(navItems[i].href);
+            break;
+          }
+        }
+      }
     };
 
     window.addEventListener("scroll", handleScroll);
+
+    handleScroll();
+
     return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  useEffect(() => {
+    const updateSections = () => {
+      sectionsRef.current = navItems
+        .map((item) => document.querySelector(item.href))
+        .filter(Boolean) as HTMLElement[];
+    };
+
+    // Small delay to ensure all sections are rendered
+    const timer = setTimeout(updateSections, 100);
+
+    // Also update on route changes or component updates
+    window.addEventListener("load", updateSections);
+
+    return () => {
+      clearTimeout(timer);
+      window.removeEventListener("load", updateSections);
+    };
   }, []);
 
   return (
@@ -86,7 +133,11 @@ export default function NavBar() {
               <a
                 key={key}
                 href={nav.href}
-                className="text-foreground/80 hover:text-primary transition-colors duration-300"
+                className={`text-foreground/80 cursor-pointer ${
+                  nav.href === activeHref
+                    ? "text-primary underline"
+                    : "text-foreground/80"
+                }  `}
                 onClick={() => setIsMenuOpen(false)}
               >
                 {nav.name}
