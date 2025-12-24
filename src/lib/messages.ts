@@ -25,4 +25,19 @@ export const message = {
     "I design intuitive and user-centered interfaces that focus on clarity, usability, and seamless user experiences.",
   getInTouch: "Get In Touch",
   downloadCV: "Download CV",
+
+  // contact
+  contactInfo: "Contact Information",
+  connectWithMe: "Connect with Me",
+  contactDescription:
+    "Have a project in mind or just want to say hello? Feel free to reach out! I'm always open to discussing new opportunities, collaborations, or answering any questions you may have. Let's connect and create something amazing together!",
+  teleMessage: "Hi, I saw your portfolio and would like to connect!",
+  sendAMessage: "Send a Message",
+  sendMessage: "Send Message",
+  yourName: "Your Name",
+  namePlaceholder: "John Doe ...",
+  yourEmail: "Your Email",
+  emailPlaceholder: "John@gmail.com",
+  yourMessage: "Your Message",
+  messagePlaceholder: "Hello, I would like to ...",
 };
