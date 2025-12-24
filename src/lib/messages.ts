@@ -40,4 +40,10 @@ export const message = {
   emailPlaceholder: "John@gmail.com",
   yourMessage: "Your Message",
   messagePlaceholder: "Hello, I would like to ...",
+
+  //notFound
+  status: "404",
+  pageNotFound: "Page Not Found",
+  sorryText: "Sorry, we couldn't find the page you're looking for.",
+  retrunHome: "Return to Homepage",
 };
