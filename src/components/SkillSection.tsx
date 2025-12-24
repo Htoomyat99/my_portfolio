@@ -4,28 +4,32 @@ import { useState } from "react";
 
 const skills: SkillType[] = [
   // Frontend
-  { name: "HTML/CSS", level: 95, category: "frontend" },
-  { name: "JavaScript", level: 90, category: "frontend" },
-  { name: "React", level: 90, category: "frontend" },
-  { name: "TypeScript", level: 85, category: "frontend" },
-  { name: "Tailwind CSS", level: 90, category: "frontend" },
-  { name: "Next.js", level: 80, category: "frontend" },
+  { name: "HTML/CSS", level: 85, category: "frontend" },
+  { name: "JavaScript", level: 80, category: "frontend" },
+  { name: "React", level: 85, category: "frontend" },
+  { name: "TypeScript", level: 80, category: "frontend" },
+  { name: "Tailwind CSS", level: 80, category: "frontend" },
+  { name: "Next.js", level: 40, category: "frontend" },
 
   // Backend
-  { name: "Node.js", level: 80, category: "backend" },
-  { name: "Express", level: 75, category: "backend" },
-  { name: "MongoDB", level: 70, category: "backend" },
-  { name: "PostgreSQL", level: 65, category: "backend" },
-  { name: "GraphQL", level: 60, category: "backend" },
+  { name: "Node.js", level: 40, category: "backend" },
+  { name: "Express", level: 40, category: "backend" },
+  { name: "MongoDB", level: 40, category: "backend" },
+  { name: "PostgreSQL", level: 40, category: "backend" },
+  { name: "Java", level: 40, category: "backend" },
 
   // Tools
-  { name: "Git/GitHub", level: 90, category: "tools" },
-  { name: "Docker", level: 70, category: "tools" },
-  { name: "Figma", level: 85, category: "tools" },
-  { name: "VS Code", level: 95, category: "tools" },
+  { name: "Git/GitHub", level: 80, category: "tools" },
+  { name: "Docker", level: 50, category: "tools" },
+  { name: "Figma", level: 60, category: "tools" },
+  { name: "VS Code", level: 85, category: "tools" },
+
+  //Mobile
+  { name: "React Native", level: 90, category: "mobile" },
+  { name: "Flutter", level: 40, category: "mobile" },
 ];
 
-const categorys: string[] = ["all", "frontend", "backend", "tools"];
+const categorys: string[] = ["all", "frontend", "backend", "mobile", "tools"];
 
 export default function SkillSection() {
   const [activeCategory, setActiveCategory] = useState("all");
