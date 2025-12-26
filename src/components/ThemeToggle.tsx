@@ -36,7 +36,7 @@ export default function ThemeToggle({
     <button
       onClick={toggleTheme}
       className={cn(
-        "fixed top-3.5 max-sm:right-20 right-5 z-50 p-2 rounded-full transition-colors duration-300",
+        "z-50 p-2 rounded-full transition-colors duration-300",
         "focus:outline-hidden"
       )}
     >

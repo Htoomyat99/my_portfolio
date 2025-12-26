@@ -3,6 +3,7 @@ import { cn } from "@/lib/utils";
 import type { NavItemType } from "@/type";
 import { Menu, X } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
+import ThemeToggle from "./ThemeToggle";
 
 const navItems: NavItemType[] = [
   { name: "Home", href: "#hero" },
@@ -12,7 +13,12 @@ const navItems: NavItemType[] = [
   { name: "Contact", href: "#contact" },
 ];
 
-export default function NavBar() {
+interface NavBarProps {
+  isDarkMode: boolean;
+  setIsDarkMode: (value: boolean) => void;
+}
+
+export default function NavBar({ isDarkMode, setIsDarkMode }: NavBarProps) {
   const [isScroll, setIsScroll] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeHref, setActiveHref] = useState("#hero");
@@ -80,7 +86,7 @@ export default function NavBar() {
         isScroll ? "py-3 bg-background/80 backdrop-blur-md shadow-xs" : "py-5"
       )}
     >
-      <div className="container flex items-center justify-between">
+      <div className="flex items-center justify-between px-5">
         <a
           href="#hero"
           className="text-xl font-bold text-primary flex items-center"
@@ -94,30 +100,39 @@ export default function NavBar() {
         </a>
 
         {/* desktop nav */}
-        <div className="hidden md:flex space-x-8">
-          {navItems.map((nav, key) => (
-            <a
-              onClick={() => setActiveHref(nav.href)}
-              key={key}
-              href={nav.href}
-              className="text-foreground/80 hover:scale-110 hover:text-primary transition-colors duration-300"
-              style={{
-                textDecoration: nav.href === activeHref ? "underline" : "none",
-              }}
-            >
-              {nav.name}
-            </a>
-          ))}
+        <div className="flex-row items-center hidden md:flex">
+          <div className="space-x-8">
+            {navItems.map((nav, key) => (
+              <a
+                onClick={() => setActiveHref(nav.href)}
+                key={key}
+                href={nav.href}
+                className="text-foreground/80 hover:scale-110 hover:text-primary transition-colors duration-300"
+                style={{
+                  textDecoration:
+                    nav.href === activeHref ? "underline" : "none",
+                }}
+              >
+                {nav.name}
+              </a>
+            ))}
+          </div>
+
+          <ThemeToggle isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode} />
         </div>
 
         {/* mobile nav */}
-        <button
-          className="md:hidden px-2 text-foreground z-50"
-          aria-label={isMenuOpen ? "Close Menu" : "Open Menu"}
-          onClick={() => setIsMenuOpen((prev) => !prev)}
-        >
-          {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
+        <div className="md:hidden">
+          <button
+            className="px-2 text-foreground z-50"
+            aria-label={isMenuOpen ? "Close Menu" : "Open Menu"}
+            onClick={() => setIsMenuOpen((prev) => !prev)}
+          >
+            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+
+          <ThemeToggle isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode} />
+        </div>
 
         <div
           className={cn(

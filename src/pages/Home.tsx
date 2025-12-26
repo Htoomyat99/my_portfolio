@@ -7,7 +7,6 @@ import NavBar from "@/components/NavBar";
 import ProjectSection from "@/components/ProjectSection";
 import SkillSection from "@/components/SkillSection";
 import StarBackground from "@/components/StarBackground";
-import ThemeToggle from "@/components/ThemeToggle";
 import { useState } from "react";
 
 export default function Home() {
@@ -15,11 +14,9 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
-      <ThemeToggle isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode} />
-
       {isDarkMode ? <StarBackground /> : <CloudBackground />}
 
-      <NavBar />
+      <NavBar isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode} />
 
       <main>
         <HeroSection />
