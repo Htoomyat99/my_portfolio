@@ -1,35 +1,87 @@
+import { message } from "@/lib/messages";
 import type { ProjectType } from "@/type";
 import { ArrowRight, ExternalLink, Github } from "lucide-react";
 
 const projects: ProjectType[] = [
   {
     id: 1,
-    title: "SaaS Landing Page",
-    description: "A beautiful landing page app using React and Tailwind.",
-    image: "/projects/project1.png",
-    tags: ["React", "TailwindCSS", "Supabase"],
+    title: "Wordle Game Clone",
+    description:
+      "A fun and interactive mobile game where players must guess the correct word based on image hints.",
+    image: "/projects/wordle.jpeg",
+    tags: [
+      "React Native",
+      "Expo",
+      "TypeScript",
+      "Expo Router",
+      "Clerk",
+      "Firebase",
+      "React Native MMKV ",
+    ],
     demoUrl: "#",
-    githubUrl: "#",
+    githubUrl: "https://github.com/Htoomyat99/wordle",
   },
   {
     id: 2,
-    title: "Orbit Analytics Dashboard",
+    title: "Pokemon Cards Collection",
     description:
-      "Interactive analytics dashboard with data visualization and filtering capabilities.",
-    image: "/projects/project2.png",
-    tags: ["TypeScript", "D3.js", "Next.js"],
+      "Allows users to browse and manage their Pokémon card collection with search, filter and view detials.",
+    image: "/projects/pokemon.jpeg",
+    tags: [
+      "React Native",
+      "Expo",
+      "TypeScript",
+      "Zustand",
+      "Expo Router",
+      "TanStack Query",
+      "React Native MMKV",
+    ],
     demoUrl: "#",
-    githubUrl: "#",
+    githubUrl: "https://github.com/Htoomyat99/Pokemon",
   },
   {
     id: 3,
-    title: "E-commerce Platform",
+    title: "Food Ordering App",
     description:
-      "Full-featured e-commerce platform with user authentication and payment processing.",
-    image: "/projects/project3.png",
-    tags: ["React", "Node.js", "Stripe"],
+      "Users can browse the food menu, view item details, add items to the cart, place orders, update profiles, switch languages, and change dark mode.",
+    image: "/projects/flavorBite.jpeg",
+    tags: [
+      "React Native",
+      "Expo",
+      "TypeScript",
+      "Zustand",
+      "Expo Router",
+      "Superbase",
+      "React Hook Form",
+    ],
     demoUrl: "#",
-    githubUrl: "#",
+    githubUrl: "https://github.com/Htoomyat99/FlavorBite",
+  },
+  {
+    id: 4,
+    title: "Music Player App",
+    description:
+      "Users can explore a list of songs, view favorites, playlists, and artists, see song details, and enjoy music playback, even in the background.",
+    image: "/projects/music.jpeg",
+    tags: ["React Native", "Expo", "TypeScript", "Zustand", "Expo Router"],
+    demoUrl: "#",
+    githubUrl: "https://github.com/Htoomyat99/music-player",
+  },
+  {
+    id: 5,
+    title: "Movie App",
+    description:
+      "Using data from the (TMDB) API. Users can explore trending and top-rated movies, search for titles, and manage their favorite movies.",
+    image: "/projects/movie.jpeg",
+    tags: [
+      "React Native",
+      "Expo",
+      "JavaScript",
+      "Redux Toolkit",
+      "React Navigation",
+    ],
+    demoUrl: "#",
+    githubUrl: "https://github.com/Htoomyat99/Movie-App",
   },
 ];
 
@@ -42,9 +94,7 @@ export default function ProjectSection() {
         </h2>
 
         <p className="text-center text-shadow-foreground mb-12 max-w-2xl mx-auto">
-          Here are some of the projects I've worked on recently. Click on any
-          project to learn more about it. Each project showcases my skills in
-          web development, design, and problem-solving.
+          {message.projectDescription}
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -108,7 +158,7 @@ export default function ProjectSection() {
             className="cosmic-button w-fit flex items-center mx-auto gap-2"
             target="_blank"
           >
-            Check my Github <ArrowRight size={16} />
+            {message.checkMyGitHub} <ArrowRight size={16} />
           </a>
         </div>
       </div>

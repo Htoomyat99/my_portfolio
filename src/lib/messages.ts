@@ -26,6 +26,11 @@ export const message = {
   getInTouch: "Get In Touch",
   downloadCV: "Download CV",
 
+  //projects
+  projectDescription:
+    "Here are some of the projects I've worked on recently. Click on any project to learn more about it. Each project showcases my skills in mobile development, design, and problem-solving.",
+  checkMyGitHub: "Check my GitHub",
+
   // contact
   contactInfo: "Contact Information",
   connectWithMe: "Connect with Me",
