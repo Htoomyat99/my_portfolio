@@ -81,7 +81,7 @@ const projects: ProjectType[] = [
       "React Navigation",
     ],
     demoUrl: "#",
-    githubUrl: "https://github.com/Htoomyat99/Movie-App",
+    githubUrl: "https://github.com/Htoomyat99/Movie_App",
   },
 ];
 
