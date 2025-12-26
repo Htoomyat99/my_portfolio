@@ -100,7 +100,7 @@ export default function NavBar({ isDarkMode, setIsDarkMode }: NavBarProps) {
         </a>
 
         {/* desktop nav */}
-        <div className="flex-row items-center hidden md:flex">
+        <div className="flex-row items-center hidden md:flex gap-5">
           <div className="space-x-8">
             {navItems.map((nav, key) => (
               <a
