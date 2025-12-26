@@ -131,7 +131,7 @@ export default function ProjectSection() {
                 <div className="flex justify-between items-center">
                   <div className="flex space-x-3">
                     <a
-                      href={projcet.demoUrl}
+                      href={projcet.githubUrl}
                       className="text-foreground/80 hover:text-primary transition-colors duration-300"
                       target="_blank"
                     >
