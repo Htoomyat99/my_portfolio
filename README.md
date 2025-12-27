@@ -13,8 +13,10 @@ This portfolio highlights my work, technical expertise, and provides an easy way
 ---
 
 ## 📸 Preview
-
-![Portfolio Preview](./preview1.png)(./preview2.png)
+<p align="center">
+  <img src="./public/preview1.png" alt="portfolio_light" width="320"/>
+  <img src="./public/preview2.png" alt="portfolio_dark" width="320"/>
+</p>
 
 ---
 
