@@ -45,13 +45,13 @@ export default function SkillSection() {
           My <span className="text-primary">Skills</span>
         </h2>
 
-        <div className="flex flex-wrap justify-center gap-4 mb-12">
+        <div className="flex flex-wrap justify-center gap-2 md:gap-4 mb-12">
           {categorys.map((category, key) => (
             <button
               key={key}
               onClick={() => setActiveCategory(category)}
               className={cn(
-                "px-5 py-2 rounded-full transition-colors duration-300 capitalize",
+                "px-5 py-2 rounded-full transition-colors duration-300 capitalize text-sm md:text-base",
                 activeCategory === category
                   ? "bg-primary text-primary-foreground"
                   : "text-foreground hover:bg-primary-foreground/10"
@@ -69,7 +69,9 @@ export default function SkillSection() {
               className="bg-card p-6 rounded-lg shadow-xs card-hover"
             >
               <div className="text-left mb-4">
-                <h3 className="font-semibold text-lg">{skill.name}</h3>
+                <h3 className="font-semibold text-sm md:text-lg">
+                  {skill.name}
+                </h3>
               </div>
 
               <div className="w-full h-2 rounded-full overflow-hidden">

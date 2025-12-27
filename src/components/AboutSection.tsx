@@ -6,19 +6,19 @@ const AboutItems: AboutItemsType[] = [
   {
     id: 1,
     title: message.webDevelopment,
-    icon: <Code className="h-6 w-6 text-primary" />,
+    icon: <Code className="h-5 md:h-6 w-5 md:w-6 text-primary" />,
     description: message.webDevelopmentDescription,
   },
   {
     id: 2,
     title: message.mobileDevelopment,
-    icon: <User className="h-6 w-6 text-primary" />,
+    icon: <User className="h-5 md:h-6 w-5 md:w-6 text-primary" />,
     description: message.mobileDevelopmentDescription,
   },
   {
     id: 3,
     title: message.uiUxDesign,
-    icon: <Briefcase className="h-6 w-6 text-primary" />,
+    icon: <Briefcase className="h-5 md:h-6 w-5 md:w-6 text-primary" />,
     description: message.uiUxDesignDescription,
   },
 ];
@@ -33,13 +33,15 @@ export default function AboutSection() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <div className="space-y-6">
-            <h3 className="text-2xl font-semibold">{message.aboutMeTitle}</h3>
+            <h3 className="text-lg md:text-2xl font-semibold">
+              {message.aboutMeTitle}
+            </h3>
 
-            <p className="text-shadow-foreground">
+            <p className="text-shadow-foreground text-sm md:text-base">
               {message.aboutMeDescription1}
             </p>
 
-            <p className="text-shadow-foreground">
+            <p className="text-shadow-foreground text-sm md:text-base">
               {message.aboutMeDescription2}
             </p>
 
@@ -65,12 +67,16 @@ export default function AboutSection() {
                 className="gradient-border p-6 card-hover"
               >
                 <div className="flex items-start gap-4 ">
-                  <div className="p-3 rounded-full bg-primary/10">
+                  <div className="p-2 md:p-3 rounded-full bg-primary/10">
                     {item.icon}
                   </div>
                   <div className="text-left">
-                    <h4 className="font-semibold text-lg">{item.title}</h4>
-                    <p className="text-shadow-foreground">{item.description}</p>
+                    <h4 className="font-semibold text-base md:text-lg">
+                      {item.title}
+                    </h4>
+                    <p className="text-shadow-foreground text-sm md:text-base">
+                      {item.description}
+                    </p>
                   </div>
                 </div>
               </div>

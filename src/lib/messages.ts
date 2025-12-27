@@ -51,4 +51,7 @@ export const message = {
   pageNotFound: "Page Not Found",
   sorryText: "Sorry, we couldn't find the page you're looking for.",
   retrunHome: "Return to Homepage",
+
+  //footer
+  copyright: (date: number) => `© ${date} Htoo Myat Lwin, All rights reserved.`,
 };

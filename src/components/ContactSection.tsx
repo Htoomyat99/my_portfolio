@@ -18,24 +18,24 @@ import {
   Send,
 } from "lucide-react";
 import { useState } from "react";
-import FormINputComponent from "./FormInputComponent";
+import FormInputComponent from "@/components/FormInputComponent";
 
 const contactInfos: ContactInfoType[] = [
   {
     id: 1,
-    icon: <Mail className="h-6 w-6 text-primary" />,
+    icon: <Mail className="h-4 md:h-6 w-4 md:w-6 text-primary" />,
     title: "Email",
     detail: "htoomyat.20399@gmail.com",
   },
   {
     id: 2,
-    icon: <Phone className="h-6 w-6 text-primary" />,
+    icon: <Phone className="h-4 md:h-6 w-4 md:w-6 text-primary" />,
     title: "Phone",
     detail: "+95 9 769 706 139",
   },
   {
     id: 3,
-    icon: <MapPin className="h-6 w-6 text-primary" />,
+    icon: <MapPin className="h-4 md:h-6 w-4 md:w-6 text-primary" />,
     title: "Location",
     detail: "Yangon, Myanmar",
   },
@@ -70,7 +70,7 @@ const socaialMedia: SocialMediaType[] = [
   { id: 4, icon: <Send />, href: "#contact" },
 ];
 
-const telegramUserName = import.meta.env.VITE_TELEGRAM_USERNAME;
+const telegramUserName = import.meta.env.VITE_TELEGRAM_USER;
 const telegramGreetingmessage = encodeURIComponent(message.teleMessage);
 
 export default function ContactSection() {
@@ -129,13 +129,13 @@ export default function ContactSection() {
           Get <span className="text-primary">In Touch</span>
         </h2>
 
-        <p className="text-center text-shadow-foreground mb-12 max-w-2xl mx-auto">
+        <p className="text-sm md:text-base text-center text-shadow-foreground mb-12 max-w-2xl mx-auto">
           {message.contactDescription}
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
           <div className="space-y-8">
-            <h3 className="text-2xl font-semibold mb-12">
+            <h3 className="text-xl md:text-2xl font-semibold mb-12">
               {message.contactInfo}
             </h3>
 
@@ -153,14 +153,16 @@ export default function ContactSection() {
                   className="space-y-6 justify-center"
                 >
                   <div className="flex items-start space-x-4">
-                    <div className="p-3 rounded-full bg-primary/10 ">
+                    <div className="p-2 md:p-3 rounded-full bg-primary/10 ">
                       {info.icon}
                     </div>
                     <div className="flex flex-col items-start">
-                      <h4 className="font-medium">{info.title}</h4>
+                      <h4 className="font-medium text-sm md:text-base">
+                        {info.title}
+                      </h4>
                       <a
                         href={href}
-                        className="text-shadow-foreground hover:text-primary transition-colors"
+                        className="text-sm md:text-base text-shadow-foreground hover:text-primary transition-colors"
                       >
                         {info.detail}
                       </a>
@@ -190,13 +192,13 @@ export default function ContactSection() {
           </div>
 
           <div className="bg-card p-8 rounded-lg shadow-xs">
-            <h3 className="text-2xl font-semibold mb-6">
+            <h3 className="text-xl md:text-2xl font-semibold mb-6">
               {message.sendAMessage}
             </h3>
 
             <form onSubmit={handleSubmit} className="space-y-6">
               {FormInputs.map((input) => (
-                <FormINputComponent
+                <FormInputComponent
                   key={input.id}
                   input={input}
                   value={formData[input.id] || ""}

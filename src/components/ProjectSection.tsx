@@ -1,6 +1,6 @@
 import { message } from "@/lib/messages";
 import type { ProjectType } from "@/type";
-import { ArrowRight, ExternalLink, Github } from "lucide-react";
+import { ArrowRight, Github } from "lucide-react";
 
 const projects: ProjectType[] = [
   {
@@ -93,7 +93,7 @@ export default function ProjectSection() {
           Featured <span className="text-primary"> Projects</span>
         </h2>
 
-        <p className="text-center text-shadow-foreground mb-12 max-w-2xl mx-auto">
+        <p className="text-sm md:text-base text-center text-shadow-foreground mb-12 max-w-2xl mx-auto">
           {message.projectDescription}
         </p>
 
@@ -116,27 +116,29 @@ export default function ProjectSection() {
                   {projcet.tags.map((tag, key) => (
                     <span
                       key={key}
-                      className="px-2 py-1 text-xs font-medium rounded-full border"
+                      className="px-2 py-1 text-[10px] md:text-xs font-medium rounded-full border"
                     >
                       {tag}
                     </span>
                   ))}
                 </div>
 
-                <h3 className="text-xl font-semibold mb-1">{projcet.title}</h3>
-                <p className="text-shadow-foreground text-sm mb-4">
+                <h3 className="text-lg md:text-xl font-semibold mb-1">
+                  {projcet.title}
+                </h3>
+                <p className="text-shadow-foreground text-xs md:text-sm mb-4">
                   {projcet.description}
                 </p>
 
                 <div className="flex justify-between items-center">
                   <div className="flex space-x-3">
-                    <a
+                    {/* <a
                       href={projcet.githubUrl}
                       className="text-foreground/80 hover:text-primary transition-colors duration-300"
                       target="_blank"
                     >
                       <ExternalLink size={20} />
-                    </a>
+                    </a> */}
 
                     <a
                       href={projcet.githubUrl}

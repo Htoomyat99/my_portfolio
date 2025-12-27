@@ -89,7 +89,7 @@ export default function NavBar({ isDarkMode, setIsDarkMode }: NavBarProps) {
       <div className="flex items-center justify-between px-5">
         <a
           href="#hero"
-          className="text-xl font-bold text-primary flex items-center"
+          className="text-lg md:text-xl font-bold text-primary flex items-center"
         >
           <span className="relative z-10">
             <span className="text-glow text-foreground">
@@ -128,7 +128,7 @@ export default function NavBar({ isDarkMode, setIsDarkMode }: NavBarProps) {
             aria-label={isMenuOpen ? "Close Menu" : "Open Menu"}
             onClick={() => setIsMenuOpen((prev) => !prev)}
           >
-            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            {isMenuOpen ? <X size={20} /> : <Menu size={20} />}
           </button>
 
           <ThemeToggle isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode} />
@@ -148,7 +148,7 @@ export default function NavBar({ isDarkMode, setIsDarkMode }: NavBarProps) {
               <a
                 key={key}
                 href={nav.href}
-                className={`text-foreground/80 cursor-pointer ${
+                className={`text-foreground/80 text-base cursor-pointer ${
                   nav.href === activeHref
                     ? "text-primary underline"
                     : "text-foreground/80"
