@@ -12,7 +12,7 @@ export default function HeroSection() {
           <img
             src="/me.png"
             alt="Background"
-            className="w-24 h-24 xl:w-52 xl:h-56 object-cover border-2 border-white"
+            className="w-24 h-24 md:w-52 md:h-56 object-cover border-2 border-white"
           />
         </div>
 
