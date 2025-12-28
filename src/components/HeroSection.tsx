@@ -10,7 +10,7 @@ export default function HeroSection() {
       <div className="container max-w-5xl mx-auto z-10 text-center flex flex-col md:flex-row justify-between items-center">
         <div className="flex justify-center animate-fade-in mb-2">
           <img
-            src="/me.png"
+            src="/me.webp"
             alt="Background"
             className="w-24 h-24 md:w-52 md:h-56 object-cover border-2 border-white"
           />
